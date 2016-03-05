@@ -1,0 +1,311 @@
+body {
+  background: #006acd;
+}
+
+#title {
+  font-size:32px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+#page {
+  width: 800px;
+  margin: auto;
+  border: solid 1px black;
+}
+
+#header {
+  position:relative;
+  background: gray;
+  height: 48px;
+  padding: 32px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  border-bottom: solid 1px black;
+}
+
+#footer {
+  position:relative;
+  background: gray;
+  height: 48px;
+  padding: 32px;
+  padding-top: 8px;
+  padding-bottom: 0px;
+  border-top: solid 1px black;
+  text-align: right;
+}
+
+#screen_welcome {
+}
+
+#screen_setup {
+  display: none;
+}
+
+#screen_play {
+  display: none;
+}
+
+#screen_end {
+  display: none;
+}
+
+.screen {
+  background: silver;
+  height: 380px;
+  padding: 32px;
+  padding-top:20px;
+}
+
+.page_title {
+  font-size: 48px;
+  padding-top: 64px;
+  font-family: sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.page_description {
+  font-family: sans-serif;
+  border: solid 1px gray;
+  padding: 32px;
+  padding-top: 16px;
+}
+
+p {
+ margin: 4px;
+}
+
+#next_button {
+  float: right;
+  background: red;
+  width: 168px;
+}
+
+#next_button a {
+  color: black;
+  text-decoration: none;
+}
+
+#next_button a img {
+  border: none;
+}
+
+.button {
+  font-family: courier;
+  font-weight: bold;
+  border: solid 1px black;
+  background: silver;
+  width: 150px;
+  height: 22px;
+  padding: 8px;
+  margin: auto;
+}
+
+.button_text {
+  float: left;
+  padding-top:2px;
+}
+
+.button_icon{
+  float: right;
+  padding-top:4px;
+}
+
+#player2_console {
+  display: none;
+}
+
+#between_turns {
+  display: none;
+}
+
+.player_console {
+}
+
+.section_wrapper {
+  float: left;
+  margin-right: 24px;
+}
+
+.section_body {
+  
+  border: solid 2px black;
+  padding: 8px;
+  background: gray;
+
+}
+
+.grid {
+  background: black;
+  border: solid 1px black;
+}
+
+.overview {
+  width: 148px;
+  height:148px;
+  background-color: silver;
+  border: solid 2px black;
+}
+
+.shipstatus {
+  margin: 2px;
+  margin-bottom: 0px;
+}
+
+.shipoverview_shipnode {
+  border: solid 1px black;
+  width: 8px;
+  height: 8px;
+}
+
+.shipoverview_shipname {
+  font-size: 10px;
+}
+
+.shipgrid {
+  width: 150px;
+  height: 150px;
+}
+
+.endinggrid {
+  width: 150px;
+  height: 150px;
+  margin-top: 12px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shotgrid {
+  width: 300px;
+  height: 300px;
+}
+
+.grid_space {
+  width: 10%;
+  height: 10%;
+  border: solid 1px black;
+}
+
+.shipgrid tr .grid_space {
+  background-color: silver;
+}
+
+.shotgrid tr .grid_space {
+  background-color: lightblue;
+}
+
+.sections {
+  float: left;
+}
+
+.stats {
+  margin-top: 15px;
+  width: 150px;
+}
+
+.clearer {
+  clear: both;
+}
+
+.heading_container {
+  height: 20px;
+  width: 150px;
+  font-size: 12px;
+  background-image: url(images/headerBack.PNG);
+}
+
+.heading_text {
+  padding-top: 4px;
+  padding-left: 12px;
+}
+
+#player1_sidebar, #player2_sidebar {
+  float: right;
+  margin-left: 216px;
+  margin-right: 0px;
+}
+
+.shipgrid_control {
+  height: 33px;
+  width: 33px;
+  border: solid 1px black;
+  background: silver;
+}
+
+
+.shipgrid_control_icon {
+  height: 25px;
+  width: 25px;
+  margin: 4px;
+}
+
+#say_box {
+  text-align: left;
+  float: left;
+  width: 552px;
+  display: none;
+  height: 32px;
+  border: solid 1px black;
+  font-family: courier;
+  font-weight: bold;
+  font-size: 24px;
+  padding-top: 6px;
+  padding-left: 6px;
+}
+
+.screen_heading {
+  font-size:32px;
+  margin-bottom: 12px;
+  font-family: sans-serif;
+}
+
+#top_left {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+}
+
+#top_right {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+}
+
+#bottom_left {
+  position: absolute;
+  bottom: -1px;
+  left: -1px;
+}
+
+#bottom_right {
+  position: absolute;
+  bottom: -1px;
+  right: -1px;
+}
+
+.final_stats {
+  float: left;
+}
+
+#player2_final_stats {
+  float: right;
+}
+
+.final_stats_table {
+  border: solid 1px black;
+}
+
+#player1_final_stats_name, #player2_final_stats_name {
+  border: solid 1px black;
+  font-weight: bold;
+  background: gray;
+}
+
+.player_name {
+	margin-bottom: 12px;
+}
+
+.player_name input {
+	border: solid 1px black;
+}
