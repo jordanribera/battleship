@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+	<title>Battleship!</title>
+	<link href="main.css" type="text/css" rel="stylesheet" />
+	<script type="text/javascript" src="game.js"></script> 
+
+</head>
+<body>
+
+<div id="hidden_stuff" class="hidden">
+	
+</div>
+
+<div id="page">
+
+	<div id="header">
+		<img id="top_left" src="images/top_left.png" />
+		<img id="top_right" src="images/top_right.png" />
+		<div id="title">Battleship!</div>
+	</div>
+
+	<div id="screen_wrapper">
+
+		<div id="screen_welcome" class="screen">
+			<div class="screen_heading">Welcome...</div>
+			<!--REMOVED FOR LATER INSERTION<div id="high_scores" onclick="getScores()">click to get scores</div>!-->
+			<div class="page_description">
+			<p style="font-weight: bold;">How to play:</span>
+			<p>The object of Battleship is to sink all of your opponent’s ships.</p>
+			<p>Each player will begin by entering their name.</p>
+			<p>The players will then take turns shooting and trying to destroy the ships in their opponent's fleet.</p>
+			<p>During a turn, the player clicks may click a square on the battlefield grid to fire only once.</p>
+			<p>The square will turn red if the shot hits a ship and white if it hits empty sea.</p>
+			<p> When all of the squares of a ship have been hit, the ship is sunk.</p>
+			<p>When a player sinks all of the opponent's ships, the game is won.</p>
+			</div>
+			
+		</div><!-- END div:screen_welcome !-->
+
+		<div id="screen_setup" class="screen">
+			<div class="screen_heading">Setup...</div>
+			<div class="page_description">
+				<p>Players, please enter your names below to create a game.
+				<br />
+				<br />
+				<p>
+				<div id="player1_name" class="player_name">Player 1 Name:<input type="text" onchange="checkNames()" onkeypress="checkNames()" id="player1_name_input" value="" /></div>
+				<div id="player2_name" class="player_name">Player 2 Name:<input type="text" onchange="checkNames()" onkeypress="checkNames()" id="player2_name_input" value="" /></div>
+				</p>
+			</div>
+			
+		</div><!-- END div:screen_setup !-->
+
+		<div id="screen_play" class="screen">
+			<div id="dump"></div>
+			<div class="player_console" id="player1_console">
+				<div class="screen_heading"><span id="player1_name_slot"></span>'s Turn:</div>
+				<div class="sections" id="player1_sections">
+					<div class="section_wrapper">
+						<div class="heading_container"><div class="heading_text" id="player1_shotgrid_heading"></div></div>
+						<div class="section_body">
+							<div class="grid" id="player1_shotgrid_div">player 1 shotgrid</div>
+						</div>
+					</div>
+					<div class="section_wrapper" id="player1_sidebar">
+						<div class="heading_container"><div class="heading_text" id="player1_shipgrid_heading"></div></div>
+						<div class="section_body">
+							<div class="grid" id="player1_shipgrid_div" style="display:block;">player 1 shipgrid</div>
+							<div class="overview" id="player1_shipoverview_div" style="display:none;"></div>
+							<div id="player1_shipgrid_control" class="shipgrid_control">
+								<a href="javascript:switchShipGridView('1')"><div class="shipgrid_control_icon" id="player1_shipgrid_control_icon" style="background-image: url(images/fleetGridIcon.PNG);"></div></a>
+							</div>
+							
+							<div class="stats" id="player1_stats">
+								<div class="shots">Shots: <span id="player1_shots">0</span></div>
+								<div class="hits">Hits: <span id="player1_hits">0</span></div>
+								<div class="sinks">Sinks: <span id="player1_sinks">0</span></div>
+							</div><!-- END div:player1_stats !-->
+						</div>
+					</div>
+				</div>
+				
+				<div class="clearer"></div>
+			</div>
+			<div class="player_console" id="player2_console">
+				<div class="screen_heading"><span id="player2_name_slot"></span>'s Turn:</div>
+				<div class="sections" id="player2_sections">
+					<div class="section_wrapper">
+						<div class="heading_container"><div class="heading_text" id="player2_shotgrid_heading"></div></div>
+						<div class="section_body">
+							<div class="grid" id="player2_shotgrid_div">player 2 shotgrid</div>
+						</div>
+					</div>
+					<div class="section_wrapper" id="player2_sidebar">
+						<div class="heading_container"><div class="heading_text" id="player2_shipgrid_heading"></div></div>
+						<div class="section_body">
+							<div class="grid" id="player2_shipgrid_div" style="display:block;">player 2 shipgrid</div>
+							<div class="overview" id="player2_shipoverview_div" style="display:none;"></div>
+							<div id="player2_shipgrid_control" class="shipgrid_control">
+								<a href="javascript:switchShipGridView('2')"><div onclick="" class="shipgrid_control_icon" id="player2_shipgrid_control_icon" style="background-image: url(images/fleetGridIcon.PNG);"></div></a>
+							</div>
+						
+							<div class="stats" id="player2_stats">
+								<div class="shots">Shots: <span id="player2_shots">0</span></div>
+								<div class="hits">Hits: <span id="player2_hits">0</span></div>
+								<div class="sinks">Sinks: <span id="player2_sinks">0</span></div>
+							</div><!-- END div:player2_stats !-->
+						</div>
+					</div>
+				</div>
+
+				<div class="clearer"></div>
+			</div>
+			<div id="between_turns">
+				<div class="screen_heading">Interlude...</div>
+				Please switch players while this blank screen shows. It is <span id="next_player"></span>'s turn next.
+			</div>
+		</div><!-- END div:screen_play !-->
+		
+		<div id="screen_end" class="screen">
+		<div class="screen_heading"><span id="victor_declare"></span> is the winner!</div>
+		
+		<div id="player1_final_stats" class="final_stats"></div>
+		<div id="player2_final_stats" class="final_stats"></div>
+		</div><!-- END div:screen_end !-->
+	
+	</div><!-- END div:screen_wrapper !-->
+
+	<div id="footer">
+		<img id="bottom_left" src="images/bottom_left.png" />
+		<img id="bottom_right" src="images/bottom_right.png" />
+		<div id="say_box">SAY</div>
+		<div id="next_button">
+			<a href="javascript:welcomeStart()"><div id="welcome_start" class="button" onmouseover="highlightButton(this)" onmouseout="unhighlightButton(this)"><div class="button_text">Start!</div><img class="button_icon" src="images/next_arrow.png" /></div></a>
+		</div>
+	</div>
+
+</div><!-- END div:page !-->
+
+</body>
+
+</html>
